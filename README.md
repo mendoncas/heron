@@ -4,4 +4,3 @@ The intended goal is to have a small program that, given a certain git repositor
 and constantly watches over the repo, identifying and applying changes.
 
 Needless to day, this is a experimental project that im using for practice.
-# heron
