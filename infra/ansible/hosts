@@ -1,2 +1,0 @@
-[heron]
-heronserver ansible_host=44.206.12.2 ansible_user=ubuntu ansible_ssh_private_key_file=../heron-key-pair.pem
