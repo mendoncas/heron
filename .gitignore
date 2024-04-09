@@ -1,9 +1,9 @@
 nohup.out
+*.pem
+tmp
 ./tmp
-./infra/.*
 ./infra/*.tfstate
 ./infra/terraform.*
-*.pem
+./infra/.terraform
 ./infra/ansible/group_vars/*
 ./infra/ansible/hosts
-tmp
