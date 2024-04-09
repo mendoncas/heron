@@ -1,0 +1,35 @@
+- name: update packages
+  apt:
+    name: "*"
+    state: latest
+
+- name: install basic packages
+  apt:
+    pkg: "{{packages}}"
+    state: latest
+
+- name: add docker repo key 
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add docker repo
+  apt_repository:
+    repo: "deb https://download.docker.com/linux/ubuntu focal stable"
+    state: present
+
+- name: update and install docker
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: yes
+
+- name: start docker service
+  service:
+    name: docker
+    state: started
+      
+- name: allow user to docker
+  shell: |
+    sudo usermod -aG docker "{{username}}"
+

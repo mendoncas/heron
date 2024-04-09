@@ -1,0 +1,27 @@
+- name: copy script file
+  copy:
+    src: ../../deployer/main.sh
+    dest: /usr/local/bin/heron.sh
+    mode: u=rx,go=rx
+
+- name: copy service file
+  copy:
+    src: ../../deployer/deployer.service
+    dest: /etc/systemd/system
+#  notify: 
+#    - start deployer service
+
+- name: start deployer service
+  service:
+    name: deployer
+    state: started
+
+#- name: run script
+#  script:
+#    cmd: ../../deployer/main.sh "{{git_repo}}" "{{image_name}}" "{{download_path}}" 
+  
+# i chose to use this instead of the expectd script "cmd" directive 
+# in order to run the shell script as a detached processs
+#- name: run script
+#  shell:
+#    cmd: nohup ./main.sh "{{git_repo}}" "{{image_name}}" "{{download_path}}" > deployer.log &

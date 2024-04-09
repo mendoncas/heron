@@ -1,0 +1,9 @@
+[Unit]
+Description=Heron service
+
+[Service]
+User=ubuntu
+ExecStart=/usr/local/bin/heron.sh https://github.com/mendoncas/sample-nginx sample /home/ubuntu/deployed-app
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    #- import_tasks: ../ansible/tasks/setup.yml
+    - import_tasks: ../ansible/tasks/run_deployer.yml

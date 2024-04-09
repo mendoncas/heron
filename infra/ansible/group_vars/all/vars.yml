@@ -1,0 +1,10 @@
+username: ubuntu
+packages:
+  - git
+  - vim
+  - ca-certificates
+  - curl
+# https://github.com/mendoncas/sample-nginx nginx-teste ./tmp
+git_repo:  https://github.com/mendoncas/sample-nginx
+image_name: nginx-teste
+download_path: ./tmp
