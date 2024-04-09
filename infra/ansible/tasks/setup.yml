@@ -32,4 +32,3 @@
 - name: allow user to docker
   shell: |
     sudo usermod -aG docker "{{username}}"
-
